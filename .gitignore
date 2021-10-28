@@ -7,7 +7,7 @@
 
 #Proyectos en VSC
 
-\Debug\
+\ Debug \
 *.sln
 *.vcxproj
 *.vcxproj.filters
