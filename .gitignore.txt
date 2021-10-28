@@ -1,0 +1,14 @@
+# Proyectos en Dev C++
+
+*.dev
+*.layout
+*.win
+*.o
+
+#Proyectos en VSC
+
+\Debug\
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
