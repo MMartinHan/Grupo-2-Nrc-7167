@@ -20,5 +20,4 @@ class Fraccion : public Calculo {
 		void pedirDatos();
 		void calcular(); //metodo abstracto
 		void imprimir();
-		
 };

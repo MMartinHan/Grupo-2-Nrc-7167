@@ -7,11 +7,11 @@ using namespace std;
 
 
 /**
- * @brief Fraccion::Fraccion 
+ * @brief Fraccion::Fraccion
  *        Constructor vacio de la clase Operacion
- * 
- * @tparam No recibe parametros 
- * @param previous 
+ *
+ * @tparam No recibe parametros
+ * @param previous
  */
 Fraccion::Fraccion() {
 
@@ -21,9 +21,9 @@ Fraccion::Fraccion() {
 /**
  * @brief Fraccion::Fraccion
  *        Constructor con parametros de la clase Operacion
- * 
+ *
  * @tparam float numerador, float denominador
- * @param previous 
+ * @param previous
  */
 Fraccion::Fraccion(float num, float den) {
 
@@ -35,9 +35,9 @@ Fraccion::Fraccion(float num, float den) {
 /**
  * @brief Fraccion::imprimir
  *        Muestra en pantalla resultados
- * 
+ *
  * @tparam No recibe parametros
- * @param previous 
+ * @param previous
  */
 void Fraccion::imprimir() {
 
@@ -49,9 +49,9 @@ void Fraccion::imprimir() {
 /**
  * @brief Fraccion::pedirDatos
  *        La funcion pide datos, en este caso, numerador y denominador
- * 
+ *
  * @tparam No recibe parametros
- * @param previous 
+ * @param previous
  */
 void Fraccion::pedirDatos() {
 
@@ -69,12 +69,12 @@ void Fraccion::pedirDatos() {
  *        La funcion inicializa variables genericas de tipo flotante usando getters,
  *        realiza las operaciones correspondientes e inicializa los valores de los atributos
  *        de la clase Fraccion
- * 
+ *
  * @tparam No recibe parametros
- * @param previous 
+ * @param previous
  */
 void Fraccion::calcular() {
-	
+
 	Fraccion* fracciones = new Fraccion[2]; //En este problema, necesitamos DOS fracciones, declaramos arreglo de tipo dinamico del objeto
 
 	for (int i = 0; i < 2; i++) {
@@ -93,15 +93,15 @@ void Fraccion::calcular() {
 	num = ((n1 * d2) + (n2 * d1));
 	den = ((d1 + d2));
 
-	
+
 }
 
 /**
  * @brief Operacion::setNumerador
  *        Metodo Setter que permite modificar el valor del atributo
- * 
+ *
  * @tparam float numerador
- * @param previous 
+ * @param previous
  */
 void Fraccion::setNum(float num) {
 	this->num = num;
@@ -110,9 +110,9 @@ void Fraccion::setNum(float num) {
 /**
  * @brief Operacion::getNumerador
  *        Metodo Getter que permite obtener el valor inicializado del atributo
- * 
+ *
  * @tparam No recibe parametros
- * @param previous 
+ * @param previous
  */
 float Fraccion::getNum() {
 	return num;
@@ -121,9 +121,9 @@ float Fraccion::getNum() {
 /**
  * @brief Operacion::setDenominador
  *        Metodo Setter que permite modificar el valor del atributo
- * 
+ *
  * @tparam float denominador
- * @param previous 
+ * @param previous
  */
 void Fraccion::setDen(float den) {
 	this->den = den;
@@ -132,11 +132,10 @@ void Fraccion::setDen(float den) {
 /**
  * @brief Operacion::getDenominador
  *        Metodo Getter que permite obtener el valor inicializado del atributo
- * 
+ *
  * @tparam No recibe parametros
- * @param previous 
+ * @param previous
  */
 float Fraccion::getDen() {
 	return den;
 }
-
