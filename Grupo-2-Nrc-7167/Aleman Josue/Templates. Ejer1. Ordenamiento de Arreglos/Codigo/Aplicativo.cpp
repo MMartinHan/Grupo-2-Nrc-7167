@@ -2,7 +2,7 @@
 /*
 	Universidad de las Fuerzas Armadas ESPE
 	Nombre del programa: Ordenamiento de Arreglos
-	Autor: Martin Han
+	Autor: Josue Aleman
 	Fecha de creacion: 29/10/2021
 	Fecha de modificacion: 29/10/2021
 	Nrc: 7167
