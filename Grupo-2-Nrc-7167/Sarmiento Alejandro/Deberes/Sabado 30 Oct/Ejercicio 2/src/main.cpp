@@ -1,3 +1,12 @@
+/*
+	UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+	Autor: Sarmiento Alejandro
+	Fecha de creación: 29 de octubre del 2021
+	Fecha de modificación: 29 de octubre del 2021
+	NRC: 7167
+	Nombre de la materia: Estructura de Datos
+*/
+
 #include <iostream>
 #include "Operacion.h"
 #include "Operacion.cpp"
