@@ -1,3 +1,13 @@
+/*
+    Universidad de las Fuerzas Armadas ESPE
+    Nombre del programa: Proyecto 4
+    Autor: Sebastian Bolaños 
+    Fecha de creacion: 29/10/2021
+    Fecha de modificacion: 29/10/2021
+    Materia: Estructura de Datos
+    Nrc: 7167
+*/
+
 #include <iostream>
 
 using namespace std;
