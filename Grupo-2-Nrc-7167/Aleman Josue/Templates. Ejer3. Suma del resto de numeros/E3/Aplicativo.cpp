@@ -1,3 +1,12 @@
+/*
+	Universidad de las Fuerzas Armadas ESPE
+	Nombre del programa: Ordenamiento de Arreglos
+	Autor: Josue Aleman
+	Fecha de creacion: 31/10/2021
+	Fecha de modificacion: 2/11/2021
+	Nrc: 7167
+	Materia: Estructura de Datos
+*/
 #include <iostream>
 #include <stdlib.h>
 #include "Arreglo.cpp"
