@@ -1,29 +1,29 @@
 /*
     Universidad de las Fuerzas Armadas ESPE
-    Nombre del programa: Plantilla 4
+    Nombre del programa: Plantilla 5
     Autor: Martin Han
-    Fecha de creacion: 1/11/2021
-    Fecha de modificacion: 1/11/2021
+    Fecha de creacion: 2/11/2021
+    Fecha de modificacion: 2/11/2021
     Nrc: 7167
     Materia: Estructura de Datos
 */
 
 #include <iostream>
-#include "Caracter.h"
+#include "Frase.h"
 
 using namespace std;
 
 template <typename T>
-Caracter<T>::Caracter(T caracter){
+Frase<T>::Frase(T caracter){
     this->caracter=caracter;
 }
 
 template <typename T>
-void Caracter<T>::setCaracter(T caracter){
+void Frase<T>::setFrase(T caracter){
     this->caracter=caracter;
 }
 
 template <typename T>
-T Caracter<T>::getCaracter()const{
+T Frase<T>::getFrase()const{
     return this -> caracter;
 }
