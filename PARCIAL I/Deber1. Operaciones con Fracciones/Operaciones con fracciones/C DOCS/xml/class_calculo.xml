@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_calculo" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Calculo</compoundname>
+    <derivedcompoundref refid="class_fraccion" prot="public" virt="non-virtual">Fraccion</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_calculo_1a139fe673a263a99861bc50c774419d6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Calculo::calcular</definition>
+        <argsstring>()=0</argsstring>
+        <name>calcular</name>
+        <reimplementedby refid="class_fraccion_1a2deda715ccc42c3ec45f296f5c8edb86">calcular</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Calculo.h" line="11" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Fraccion</label>
+        <link refid="class_fraccion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Calculo</label>
+        <link refid="class_calculo"/>
+      </node>
+    </inheritancegraph>
+    <location file="Calculo.h" line="8" column="1" bodyfile="Calculo.h" bodystart="8" bodyend="13"/>
+    <listofallmembers>
+      <member refid="class_calculo_1a139fe673a263a99861bc50c774419d6c" prot="public" virt="pure-virtual"><scope>Calculo</scope><name>calcular</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
