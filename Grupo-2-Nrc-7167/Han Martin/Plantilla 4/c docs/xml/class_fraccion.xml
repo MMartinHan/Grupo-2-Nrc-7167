@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_fraccion" kind="class" language="C++" prot="public">
+    <compoundname>Fraccion</compoundname>
+    <basecompoundref refid="class_calculo" prot="public" virt="non-virtual">Calculo</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_fraccion_1a76916c3390ebdd1b85cc686af07279eb" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Fraccion::num</definition>
+        <argsstring></argsstring>
+        <name>num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="10" column="7" bodyfile="Fraccion.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fraccion_1aa9869fca0f9df7409d860e7a1f5d96ce" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Fraccion::den</definition>
+        <argsstring></argsstring>
+        <name>den</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="10" column="11" bodyfile="Fraccion.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_fraccion_1a80b8bb475192ceb820428a57e911ceb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Fraccion::Fraccion</definition>
+        <argsstring>()</argsstring>
+        <name>Fraccion</name>
+        <briefdescription>
+<para><ref refid="class_fraccion_1a80b8bb475192ceb820428a57e911ceb5" kindref="member">Fraccion::Fraccion</ref> Constructor vacio de la clase Operacion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>No</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>recibe parametros </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>previous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="14" column="1" bodyfile="Fraccion.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fraccion_1ab4a3092930e4f573aa8d55f10a263a8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Fraccion::Fraccion</definition>
+        <argsstring>(float, float)</argsstring>
+        <name>Fraccion</name>
+        <param>
+          <type>float</type>
+          <defname>num</defname>
+        </param>
+        <param>
+          <type>float</type>
+          <defname>den</defname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_fraccion_1a80b8bb475192ceb820428a57e911ceb5" kindref="member">Fraccion::Fraccion</ref> Constructor con parametros de la clase Operacion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>float</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>numerador, float denominador </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>previous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="15" column="1" bodyfile="Fraccion.cpp" bodystart="28" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fraccion_1a4f86bf66283c17d81047976c96fc9d81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Fraccion::setNum</definition>
+        <argsstring>(float)</argsstring>
+        <name>setNum</name>
+        <param>
+          <type>float</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+<para>Operacion::setNumerador Metodo Setter que permite modificar el valor del atributo. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>float</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>numerador </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>previous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="16" column="6" bodyfile="Fraccion.cpp" bodystart="106" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fraccion_1ae0ad481be7f1023f4f58b2a0ba87ad82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Fraccion::getNum</definition>
+        <argsstring>()</argsstring>
+        <name>getNum</name>
+        <briefdescription>
+<para>Operacion::getNumerador Metodo Getter que permite obtener el valor inicializado del atributo. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>No</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>recibe parametros </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>previous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="17" column="7" bodyfile="Fraccion.cpp" bodystart="117" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fraccion_1abaa5b0026be739a1ac4edffdc25c8d22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Fraccion::setDen</definition>
+        <argsstring>(float)</argsstring>
+        <name>setDen</name>
+        <param>
+          <type>float</type>
+          <defname>den</defname>
+        </param>
+        <briefdescription>
+<para>Operacion::setDenominador Metodo Setter que permite modificar el valor del atributo. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>float</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>denominador </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>previous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="18" column="6" bodyfile="Fraccion.cpp" bodystart="128" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fraccion_1acabf9001ec94686306dfcac637916545" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Fraccion::getDen</definition>
+        <argsstring>()</argsstring>
+        <name>getDen</name>
+        <briefdescription>
+<para>Operacion::getDenominador Metodo Getter que permite obtener el valor inicializado del atributo. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>No</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>recibe parametros </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>previous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="19" column="7" bodyfile="Fraccion.cpp" bodystart="139" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fraccion_1a94441e25add273374207dd8e43865c5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Fraccion::pedirDatos</definition>
+        <argsstring>()</argsstring>
+        <name>pedirDatos</name>
+        <briefdescription>
+<para><ref refid="class_fraccion_1a94441e25add273374207dd8e43865c5b" kindref="member">Fraccion::pedirDatos</ref> La funcion pide datos, en este caso, numerador y denominador. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>No</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>recibe parametros </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>previous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="20" column="6" bodyfile="Fraccion.cpp" bodystart="56" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fraccion_1a2deda715ccc42c3ec45f296f5c8edb86" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Fraccion::calcular</definition>
+        <argsstring>()</argsstring>
+        <name>calcular</name>
+        <reimplements refid="class_calculo_1a139fe673a263a99861bc50c774419d6c">calcular</reimplements>
+        <briefdescription>
+<para><ref refid="class_fraccion_1a2deda715ccc42c3ec45f296f5c8edb86" kindref="member">Fraccion::calcular</ref> La funcion inicializa variables genericas de tipo flotante usando getters, realiza las operaciones correspondientes e inicializa los valores de los atributos de la clase <ref refid="class_fraccion" kindref="compound">Fraccion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>No</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>recibe parametros </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>previous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="21" column="6" bodyfile="Fraccion.cpp" bodystart="76" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fraccion_1add28ed81617181a3590c59ffb2150b69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Fraccion::imprimir</definition>
+        <argsstring>()</argsstring>
+        <name>imprimir</name>
+        <briefdescription>
+<para><ref refid="class_fraccion_1add28ed81617181a3590c59ffb2150b69" kindref="member">Fraccion::imprimir</ref> Muestra en pantalla resultados. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>No</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>recibe parametros </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>previous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Fraccion.h" line="22" column="6" bodyfile="Fraccion.cpp" bodystart="42" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Fraccion</label>
+        <link refid="class_fraccion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Calculo</label>
+        <link refid="class_calculo"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Fraccion</label>
+        <link refid="class_fraccion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Calculo</label>
+        <link refid="class_calculo"/>
+      </node>
+    </collaborationgraph>
+    <location file="Fraccion.h" line="6" column="1" bodyfile="Fraccion.h" bodystart="6" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_fraccion_1a2deda715ccc42c3ec45f296f5c8edb86" prot="public" virt="virtual"><scope>Fraccion</scope><name>calcular</name></member>
+      <member refid="class_fraccion_1aa9869fca0f9df7409d860e7a1f5d96ce" prot="private" virt="non-virtual"><scope>Fraccion</scope><name>den</name></member>
+      <member refid="class_fraccion_1a80b8bb475192ceb820428a57e911ceb5" prot="public" virt="non-virtual"><scope>Fraccion</scope><name>Fraccion</name></member>
+      <member refid="class_fraccion_1ab4a3092930e4f573aa8d55f10a263a8b" prot="public" virt="non-virtual"><scope>Fraccion</scope><name>Fraccion</name></member>
+      <member refid="class_fraccion_1acabf9001ec94686306dfcac637916545" prot="public" virt="non-virtual"><scope>Fraccion</scope><name>getDen</name></member>
+      <member refid="class_fraccion_1ae0ad481be7f1023f4f58b2a0ba87ad82" prot="public" virt="non-virtual"><scope>Fraccion</scope><name>getNum</name></member>
+      <member refid="class_fraccion_1add28ed81617181a3590c59ffb2150b69" prot="public" virt="non-virtual"><scope>Fraccion</scope><name>imprimir</name></member>
+      <member refid="class_fraccion_1a76916c3390ebdd1b85cc686af07279eb" prot="private" virt="non-virtual"><scope>Fraccion</scope><name>num</name></member>
+      <member refid="class_fraccion_1a94441e25add273374207dd8e43865c5b" prot="public" virt="non-virtual"><scope>Fraccion</scope><name>pedirDatos</name></member>
+      <member refid="class_fraccion_1abaa5b0026be739a1ac4edffdc25c8d22" prot="public" virt="non-virtual"><scope>Fraccion</scope><name>setDen</name></member>
+      <member refid="class_fraccion_1a4f86bf66283c17d81047976c96fc9d81" prot="public" virt="non-virtual"><scope>Fraccion</scope><name>setNum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
