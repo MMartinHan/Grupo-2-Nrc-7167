@@ -17,6 +17,7 @@ int main(int argv, char** argc) {
 	puntos.sumar();
 	puntos.restar();
 	puntos.igualar();
-	
+	puntos.multiplicar();
+
 	return 0;
 }

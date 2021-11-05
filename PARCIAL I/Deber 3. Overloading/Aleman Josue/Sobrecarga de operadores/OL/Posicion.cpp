@@ -48,3 +48,15 @@ void::Posicion::igualar() {
 	}
 	cout << "COORDENADAS DISTINTAS!" << endl;
 }
+
+void::Posicion::multiplicar() {
+	cout << "MULTIPLICACION:" << endl;
+	cout << "\n";
+
+	Posicion punto1(5, 10);
+	Posicion punto2(4, 20);
+
+	Posicion punto3 = punto1 * punto2;
+
+	cout << punto3.x << "\t" << punto3.y << endl;
+}
