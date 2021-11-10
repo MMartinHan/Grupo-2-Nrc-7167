@@ -1,3 +1,16 @@
+/*
+    Universidad de las Fuerzas Armadas ESPE
+    Nombre del programa: Metodos Sobrecargados y Archivos
+    Autores: 
+		- Aleman Josue
+		- Bolanios Sebastian
+		- Han Martin
+		- Sarmiento Bryan
+    Fecha de creacion: 9/11/2021
+    Fecha de modificacion: 9/11/2021
+    Nrc: 7167
+    Materia: Estructura de Datos
+*/
 #include "Archivo.h"
 #include <iostream>
 #include <fstream>
@@ -22,7 +35,7 @@ template<typename T>
 T Archivo<T>::leer() {
 
     ifstream arch(nombre);
-    T entrada, sum = 0;
+    T entrada, sum = 0;;
     while(arch >> entrada) {
         sum += entrada;
     }
