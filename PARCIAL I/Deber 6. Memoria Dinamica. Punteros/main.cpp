@@ -1,3 +1,16 @@
+/*
+    Universidad de las Fuerzas Armadas ESPE
+    Nombre del programa: Memoria Dinamica. Punteros
+    Autores: 
+		- Aleman Josue
+		- Bolanios Sebastian
+		- Han Martin
+		- Sarmiento Bryan
+    Fecha de creacion: 10/11/2021
+    Fecha de modificacion: 10/11/2021
+    Nrc: 7167
+    Materia: Estructura de Datos
+*/
 #include <iostream>
 #include <stdlib.h>
 #include "Proceso.h"
