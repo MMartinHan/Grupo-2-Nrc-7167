@@ -39,7 +39,7 @@ void ingresarElementos(int _dim1, int _dim2) {
 	conjunto2.ingresarElementos(_dim2);
 	int* B = conjunto2.getElementos();
 
-	//IMPRIMIENDO CONJUNTOS (con sobrecarga de operadores)
+	//IMPRIMIENDO CONJUNTOS
 	conjunto1.imprimir();
 	conjunto2.imprimir();
 

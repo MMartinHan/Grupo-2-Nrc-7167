@@ -1,6 +1,12 @@
 #include "Ordenamiento.h"
 
-
+/**
+ * @brief Ordenamiento<T>::ordenar
+ *        Metodo que ordena un arreglo
+ *
+ * @tparam direccion de un arreglo dinamico, dimension del arreglo de tipo entero
+ * @param previous
+ */
 template<typename T>
 void Ordenamiento<T>::ordenar(T*& c, int dim) {
 	for (int i = 0; i < dim - 1; i++) {
@@ -13,6 +19,13 @@ void Ordenamiento<T>::ordenar(T*& c, int dim) {
 
 }
 
+/**
+ * @brief Ordenamiento<T>::intercambiar
+ *        Metodo que intercambia dos valores 
+ *
+ * @tparam direccion del primer valor, dimension del segundo valor
+ * @param previous
+ */
 template<typename T>
 void Ordenamiento<T>::intercambiar(T& v1, T& v2) {
 	T aux = v1;

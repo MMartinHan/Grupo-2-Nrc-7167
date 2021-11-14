@@ -33,9 +33,17 @@ void Conjunto<T>::ingresarElementos(int) {
 	cout << "\n";
 	for (int i = 0; i < dimension; i++) {
 		cout << "Ingrese el " << i + 1 << " elemento del conjunto: ";
-		cin >> elementos[i]; 
+		cin >> *(elementos+i); 
 	}
 }
+
+/**
+ * @brief Conjunto<T>::intersecar
+ *        Metodo que encuentra la interseccion de dos arreglos
+ *
+ * @tparam Arreglo tipo plantilla, Arreglo tipo plantilla, dimension 1, dimension 2
+ * @param previous
+ */
 template<typename T>
 void Conjunto<T>::intersecar(T* A, T* B, int dim1, int dim2) {
 	T* I = (T*)calloc(dim1, sizeof(T*));
@@ -43,8 +51,8 @@ void Conjunto<T>::intersecar(T* A, T* B, int dim1, int dim2) {
 	int k = 0;
 	for (int i = 0; i < dim2; i++) {
 		for (int j = 0; j < dim1; j++) {
-			if (A[i] == B[j]) {
-				I[k] = B[j];
+			if (*(A+i) == *(B+j)) {
+				*(I+k) = *(B+j);
 				k++;
 				break;
 			}
@@ -53,13 +61,22 @@ void Conjunto<T>::intersecar(T* A, T* B, int dim1, int dim2) {
 
 	Ordenamiento<int> orden;
 	orden.ordenar(I, k);
+
 	cout << "\n\nInterseccion de los conjuntos A y B: "<< endl;
 	for (int i = 0; i < k; i++) {
 		cout << "\t";
-		cout << I[i];
+		cout << *(I+i);
 	}
 
 }
+
+/**
+ * @brief Ordenamiento<T>::unir
+ *        Metodo que encuentra la union de dos arreglos
+ *
+ * @tparam Arreglo tipo plantilla, Arreglo tipo plantilla, dimension 1, dimension 2
+ * @param previous
+ */
 template<typename T>
 void Conjunto<T>::unir(T* A, T* B, int dim1, int dim2) {
 	
@@ -67,7 +84,7 @@ void Conjunto<T>::unir(T* A, T* B, int dim1, int dim2) {
 	T* U = (T*)calloc(dim1+dim2,sizeof(T*));
 	
 	for (int i = 0; i < dim1; i++)
-		U[i] = A[i];
+		*(U+i) = *(A+i);
 
 	int k = dim1;
 	for (int i = 0; i < dim2; i++) {
@@ -75,14 +92,14 @@ void Conjunto<T>::unir(T* A, T* B, int dim1, int dim2) {
 		int cond = 1;
 
 		for (int j = 0; j < dim1; j++) {
-			if (A[j] == B[i]) {
+			if (*(A+j) == *(B+i)) {
 				cond = 0;
 				break;
 			}
 		}
 
 		if (cond == 1) {
-			U[k] = B[i];
+			*(U+k) = *(B+i);
 			k++;
 		}
 	}
@@ -93,10 +110,8 @@ void Conjunto<T>::unir(T* A, T* B, int dim1, int dim2) {
 	cout << "Union de los conjuntos A y B: \n\n" << endl;
 	for (int i = 0; i < k; i++) {
 		cout << "\t";
-		cout << U[i];
+		cout << *(U + i);
 	}
-
-
 }
 
 template<typename T>
@@ -104,7 +119,7 @@ void Conjunto<T>::imprimir() {
 
 	for (int i = 0; i < dimension; i++) {
 		cout << "\t";
-		cout << elementos[i];
+		cout << *(elementos+i);
 	}
 
 	cout << "\n\n";
