@@ -17,7 +17,34 @@ template<typename T>
 bool Lista<T>::estaVacia() {
 	return (this->primero == NULL);
 }
-	
+
+template <typename T>
+void Lista<T>::agregarEntre(T data, T datoABuscar) {
+	nuevoNodo = new Nodo<T>(data);
+	nuevoNodo->vinculo = NULL;
+	if (estaVacia()) {
+		cout << "Por favor agregar por cola o por cabeza primero! " << endl;
+		return;
+	}
+	else {
+		Nodo<T>* tmp;
+		tmp = primero;
+		bool encontrado = false;
+		while (tmp && !encontrado) {
+			if (tmp->data == datoABuscar) {
+				encontrado = true;
+				nuevoNodo->vinculo = tmp->vinculo;
+				tmp->vinculo = nuevoNodo;
+				if (nuevoNodo->vinculo == NULL)
+					ultimo = nuevoNodo;
+			}
+			else {
+				tmp = tmp->vinculo;
+			}
+		}
+	}
+}
+
 template<typename T>
 void Lista<T>::agregarPorCabeza(T data) {
 	nuevoNodo = new Nodo<T>(data);
@@ -27,7 +54,7 @@ void Lista<T>::agregarPorCabeza(T data) {
 		ultimo = nuevoNodo;
 	}
 	else {
-		ultimo -> vinculo = nuevoNodo;
+		ultimo->vinculo = nuevoNodo;
 		ultimo = nuevoNodo;
 	}
 }
@@ -52,7 +79,7 @@ void Lista<T>::mostrar() {
 
 template<typename T>
 void Lista<T>::eliminar(const T datoABorrar) {
-	Nodo<T>	*tmp; //apuntador que usaremos para recorrer la lista
+	Nodo<T>* tmp; //apuntador que usaremos para recorrer la lista
 	Nodo<T>* tmpAnterior; //apuntador del nodo anterior (para ajustar la lista)
 	bool encontrado;
 	if (primero == NULL)
@@ -80,12 +107,34 @@ void Lista<T>::eliminar(const T datoABorrar) {
 
 			if (encontrado) {
 				tmpAnterior->vinculo = tmp->vinculo;
-				if (ultimo == tmp) 
+				if (ultimo == tmp)
 					ultimo = tmpAnterior;
 				delete tmp;
 			}
 			else {
 				cout << "No se encontro el dato en la lista" << endl;
+			}
+		}
+	}
+}
+
+template<typename T>
+void Lista<T>::modificar(T data, T datoABuscar) {
+	if (estaVacia()) {
+		cout << "Por favor agregar por cola o por cabeza primero! " << endl;
+		return;
+	}
+	else {
+		Nodo<T>* tmp;
+		tmp = primero;
+		bool encontrado = false;
+		while (tmp && !encontrado) {
+			if (tmp->data == datoABuscar) {
+				encontrado = true;
+				tmp->data = data;
+			}
+			else {
+				tmp = tmp->vinculo;
 			}
 		}
 	}
@@ -105,6 +154,7 @@ bool Lista<T>::buscar(const T data) const {
 
 template<typename T>
 T Lista<T>::sumarLista() {
+
 	Nodo<T>* tmp;
 	tmp = primero;
 	T suma = 0;
@@ -112,6 +162,6 @@ T Lista<T>::sumarLista() {
 		suma = suma + tmp->data;
 		tmp = tmp->vinculo;
 	}
-
 	return suma;
+
 }

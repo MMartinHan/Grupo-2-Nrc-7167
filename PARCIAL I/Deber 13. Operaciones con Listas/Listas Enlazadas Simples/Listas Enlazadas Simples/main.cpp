@@ -15,6 +15,7 @@
 #include <cstdlib>
 #include "Lista.h"
 #include "Lista.cpp"
+#include "Menu.h"
 
 using namespace std;
 
@@ -23,30 +24,10 @@ int main(int argv, char** argc) {
 
     cout << "OPERACIONES CON LISTAS SIMPLES:" << endl;
 
-    //CREAMOS NUESTRA LISTA
-    Lista<int> enteros;
+    Menu menu;
+    menu.crear();
 
-    //AGREGAMOS DATOS A NUESTRA LISTA Y LA IMPRIMIMOS
 
-    int i = 0;
-    int num;
-    while (i < 5) {
-        cout << "Ingrese un numero para agregar a la lista: "; cin >> num;
-        enteros.agregarPorCabeza(num);
-        i++;
-    }
-    enteros.mostrar();
 
-    //BUSCAMOS UN ELEMENTO PARA ELIMINARLO
-
-    cout << "Escribir el numero que deseas eliminar: "; cin >> num;
-    enteros.eliminar(num);
-    enteros.mostrar();
-
-    //OPERACIONES ARITMETICAS CON LA LISTA
-
-    int suma = enteros.sumarLista();
-    cout << "La suma de todos los elementos de la lista es: " << suma << endl;
-
-	return 0;
+    return 0;
 }
