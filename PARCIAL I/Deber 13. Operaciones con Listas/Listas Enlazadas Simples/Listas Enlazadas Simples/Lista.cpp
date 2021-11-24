@@ -6,6 +6,13 @@
 
 using namespace std;
 
+
+/**
+ * @brief Constructor que inicializa una lista
+ *
+ * @return true
+ * @return false
+ */
 template <typename T>
 Lista<T>::Lista() {
 
@@ -13,10 +20,24 @@ Lista<T>::Lista() {
 	this->ultimo = NULL;
 }
 
+/**
+ * @brief Verificacion si una lista esta vacia
+ *
+ * @return true
+ * @return false
+ */
 template<typename T>
 bool Lista<T>::estaVacia() {
 	return (this->primero == NULL);
 }
+
+/**
+ * @brief Lista<T>::agregarEntre
+ *        Metodo que agrega elementos a una lista por la mitad
+ *
+ * @param tipo plantilla, dato que se va a insertar en el nuevo nodo
+ * @param tipo plantilla, dato pivote para insertar el nuevo nodo
+ */
 
 template <typename T>
 void Lista<T>::agregarEntre(T data, T datoABuscar) {
@@ -45,6 +66,12 @@ void Lista<T>::agregarEntre(T data, T datoABuscar) {
 	}
 }
 
+/**
+ * @brief Lista<T>::agregarPorCabeza
+ *        Metodo que agrega elementos a una lista por la cabeza
+ *
+ * @param tipo plantilla, dato que se va a insertar en el nuevo nodo
+ */
 template<typename T>
 void Lista<T>::agregarPorCabeza(T data) {
 	nuevoNodo = new Nodo<T>(data);
@@ -59,6 +86,13 @@ void Lista<T>::agregarPorCabeza(T data) {
 	}
 }
 
+
+/**
+ * @brief Lista<T>::agregarPorCola
+ *        Metodo que agrega elementos a una lista por la cola
+ *
+ * @param tipo plantilla, dato que se va a insertar en el nuevo nodo
+ */
 template<typename T>
 void Lista<T>::agregarPorCola(T data) {
 	nuevoNodo = new Nodo<T>(data);
@@ -66,6 +100,13 @@ void Lista<T>::agregarPorCola(T data) {
 	primero = nuevoNodo;
 }
 
+
+/**
+ * @brief Lista<T>::agregarEntre
+ *		  Metodo que recorre la lista y muestra en pantalla los identificadores de cada nodo
+ *
+ *
+ */
 template<typename T>
 void Lista<T>::mostrar() {
 	Nodo<T>* tmp;
@@ -76,6 +117,14 @@ void Lista<T>::mostrar() {
 	}
 	cout << "NULL" << endl;
 }
+
+
+/**
+ * @brief Lista<T>::eliminar
+ *        Metodo que elimina cualquier elemento de la lista
+ *
+ * @param tipo plantilla, identificador del nodo que se va a borrar
+ */
 
 template<typename T>
 void Lista<T>::eliminar(const T datoABorrar) {
@@ -118,6 +167,15 @@ void Lista<T>::eliminar(const T datoABorrar) {
 	}
 }
 
+
+
+/**
+ * @brief Lista<T>::modificar
+ *        Metodo que modifica cualquier elemento de la lista
+ *
+ * @param tipo plantilla, dato que va a reemplazar al elemento del nodo
+ * @param tipo plantilla, dato del identificador del nodo que va a ser reemplazado
+ */
 template<typename T>
 void Lista<T>::modificar(T data, T datoABuscar) {
 	if (estaVacia()) {
@@ -139,6 +197,15 @@ void Lista<T>::modificar(T data, T datoABuscar) {
 		}
 	}
 }
+
+
+/**
+ * @brief Metodo que busca si un elemento se encuentra en la lista
+ *
+ * @return true
+ * @return false
+ */
+
 template<typename T>
 bool Lista<T>::buscar(const T data) const {
 	Nodo<T>* tmp;
@@ -151,6 +218,14 @@ bool Lista<T>::buscar(const T data) const {
 
 	return encontrado;
 }
+
+
+/**
+ * @brief Lista<T>::sumarLista
+ *        Metodo que suma todos los elementos de la lista
+ *
+ * @return tipo plantilla
+ */
 
 template<typename T>
 T Lista<T>::sumarLista() {
