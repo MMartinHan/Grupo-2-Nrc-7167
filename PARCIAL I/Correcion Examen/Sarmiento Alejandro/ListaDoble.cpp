@@ -25,7 +25,7 @@ void ListaDoble::imprimir()
         float total5_pagar = total - descuento5;
         float total10_pagar = total - descuento10;
         float total15_pagar = total - descuento15;
-        if(total >= 1 && total <= 100){
+        if(total >= 0 && total <= 100){
             cout<< "\tEl valor del descuento es: "<<descuento5<<endl;
             cout<<"\tEl valor a pagar es: "<<total5_pagar<<endl;
         }
