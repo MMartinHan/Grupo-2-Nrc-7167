@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1638464440 source:d:\users\martin\desktop\martin\universidad\tercer nivel\estructura de datos solo trabajos\proyecto 1\registro_vehicular\pruebas\main.cpp
+	<iostream>
+	<winsock.h>
+	<mysql.h>
+	<mysqld_error.h>
+	<windows.h>
+
+1638322225 d:\archivos de programa\librerias mysql\resource\include\mysql.h
+	<sys/types.h>
+	<winsock.h>
+	"mysql_com.h"
+	"mysql_time.h"
+	"mysql_version.h"
+	"typelib.h"
+	"my_list.h"
+	"my_alloc.h"
+
+1638322225 d:\archivos de programa\librerias mysql\resource\include\mysql_com.h
+
+1638322225 d:\archivos de programa\librerias mysql\resource\include\mysql_time.h
+
+1638322225 d:\archivos de programa\librerias mysql\resource\include\mysql_version.h
+	<custom_conf.h>
+
+1638322225 d:\archivos de programa\librerias mysql\resource\include\typelib.h
+
+1638322225 d:\archivos de programa\librerias mysql\resource\include\my_list.h
+
+1638322225 d:\archivos de programa\librerias mysql\resource\include\my_alloc.h
+
+1632856018 c:\program files\mysql\mysql server 8.0\include\mysqld_error.h
+
