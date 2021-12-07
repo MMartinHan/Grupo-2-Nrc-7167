@@ -15,6 +15,8 @@
 					<Add option="-g" />
 					<Add directory="D:/Archivos de programa/Librerias MySQL/resource/include" />
 					<Add directory="C:/Program Files/MySQL/MySQL Server 8.0/include" />
+					<Add directory="include" />
+					<Add directory="../Pruebas" />
 				</Compiler>
 				<Linker>
 					<Add library="D:/Archivos de programa/Librerias MySQL/resource/lib/libmysql.a" />
@@ -28,6 +30,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
+					<Add directory="../Pruebas" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -38,6 +42,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Utils.cpp" />
+		<Unit filename="Utils.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
