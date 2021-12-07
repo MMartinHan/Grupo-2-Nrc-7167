@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1638464440 source:d:\users\martin\desktop\martin\universidad\tercer nivel\estructura de datos solo trabajos\proyecto 1\registro_vehicular\pruebas\main.cpp
+1638839611 source:d:\users\martin\desktop\martin\universidad\tercer nivel\estructura de datos solo trabajos\proyecto 1\registro_vehicular\pruebas\main.cpp
 	<iostream>
 	<winsock.h>
 	<mysql.h>
 	<mysqld_error.h>
 	<windows.h>
+	<fstream>
 
 1638322225 d:\archivos de programa\librerias mysql\resource\include\mysql.h
 	<sys/types.h>
