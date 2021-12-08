@@ -13,13 +13,10 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="D:/Archivos de programa/Librerias MySQL/resource/include" />
-					<Add directory="C:/Program Files/MySQL/MySQL Server 8.0/include" />
-					<Add directory="include" />
-					<Add directory="../Pruebas" />
+					<Add directory="C:/Users/User/Desktop/CRUD_C--master/resource/include" />
 				</Compiler>
 				<Linker>
-					<Add library="D:/Archivos de programa/Librerias MySQL/resource/lib/libmysql.a" />
+					<Add library="C:/Users/User/Desktop/CRUD_C--master/resource/lib/libmysql.a" />
 					<Add library="C:/Program Files/MySQL/MySQL Server 8.0/lib/libmysql.lib" />
 				</Linker>
 			</Target>

@@ -17,12 +17,9 @@
 #include <sstream>
 #include <conio.h>
 #include <stdio.h>
-#include "Person.h"
-#include "LinkedList.h"
-
+#define INT_MAX 20
 
 namespace Utils
-
 
 {
     class Validation
@@ -94,10 +91,10 @@ namespace Utils
              * @return true
              * @return false
              */
-            static bool validate_id(std::string&);
+            static bool validate_id(int);
 
             /**
-             * @brief verifica digito
+             * @brief verifica la validez de los digitos
              *
              * @return true
              * @return false
@@ -119,6 +116,20 @@ namespace Utils
             * @return false
             */
             static bool validate_date_of_birth(std::string input);
+    };
+
+    class Convertor
+    {
+
+        public:
+
+            /**
+             * @brief generar aleatorio
+             *
+             * @return int
+             */
+            static std::string charToString(const char[]);
+
     };
 
     class Generator
@@ -145,14 +156,6 @@ namespace Utils
              * @return int
              */
             static int calculate_age(std::string );
-
-            /**
-             * @brief Create a email object
-             *
-             * @return std::string
-             */
-            static std::string create_email(LinkedList<Person>, std::string, std::string);
-
             /**
              * @brief pasa a minusculas
              *
@@ -167,9 +170,6 @@ namespace Utils
              */
             static std::string to_string(double);
     };
-
-
-
 
 }
 

@@ -1,0 +1,24 @@
+
+id_prop: 1
+Nombre: Pedro
+Apellido: Sarmiento
+Cedula: 1727459165
+
+
+id_prop: 1
+Nombre: Josue
+Apellido: Aleman
+Cedula: 0
+
+
+id_prop: 2
+Nombre: Josue
+Apellido: Aleman
+Cedula: 0
+
+
+id_prop: 0
+Nombre: Josue
+Apellido: Aleman
+Cedula: 1727459164
+

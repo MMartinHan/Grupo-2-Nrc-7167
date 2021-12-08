@@ -32,13 +32,13 @@
 
 1632856018 c:\program files\mysql\mysql server 8.0\include\mysqld_error.h
 
-1638890399 source:c:\users\user\documents\universidad de las fuerzas armadas espe\pregado oct21 - feb22\estructura de datos\grupo-2-nrc-7167\parcial i\proyecto 1. registro vehicular\pruebas\main.cpp
+1638932017 source:c:\users\user\documents\universidad de las fuerzas armadas espe\pregado oct21 - feb22\estructura de datos\grupo-2-nrc-7167\parcial i\proyecto 1. registro vehicular\pruebas\main.cpp
 	<iostream>
 	<winsock.h>
 	<mysql.h>
-	<mysqld_error.h>
 	<windows.h>
 	<fstream>
+	"Utils.h"
 
 1632847594 c:\program files\mysql\mysql server 8.0\include\mysql.h
 	<stdbool.h>
@@ -89,4 +89,49 @@
 1632847594 c:\program files\mysql\mysql server 8.0\include\mysql_time.h
 
 1632847594 c:\program files\mysql\mysql server 8.0\include\errmsg.h
+
+1638931640 c:\users\user\documents\universidad de las fuerzas armadas espe\pregado oct21 - feb22\estructura de datos\grupo-2-nrc-7167\parcial i\proyecto 1. registro vehicular\pruebas\utils.h
+	<string>
+	<chrono>
+	<random>
+	<iostream>
+	<exception>
+	<limits>
+	<ios>
+	<vector>
+	<regex>
+	<chrono>
+	<ctime>
+	<iomanip>
+	<sstream>
+	<conio.h>
+	<stdio.h>
+
+1638932092 source:c:\users\user\documents\universidad de las fuerzas armadas espe\pregado oct21 - feb22\estructura de datos\grupo-2-nrc-7167\parcial i\proyecto 1. registro vehicular\pruebas\utils.cpp
+	"Utils.h"
+	<iostream>
+	<sstream>
+
+1586635608 c:\users\user\desktop\crud_c--master\resource\include\mysql.h
+	<sys/types.h>
+	<winsock.h>
+	"mysql_com.h"
+	"mysql_time.h"
+	"mysql_version.h"
+	"typelib.h"
+	"my_list.h"
+	"my_alloc.h"
+
+1586635608 c:\users\user\desktop\crud_c--master\resource\include\mysql_com.h
+
+1586635608 c:\users\user\desktop\crud_c--master\resource\include\mysql_time.h
+
+1586635608 c:\users\user\desktop\crud_c--master\resource\include\mysql_version.h
+	<custom_conf.h>
+
+1586635608 c:\users\user\desktop\crud_c--master\resource\include\typelib.h
+
+1586635608 c:\users\user\desktop\crud_c--master\resource\include\my_list.h
+
+1586635608 c:\users\user\desktop\crud_c--master\resource\include\my_alloc.h
 
