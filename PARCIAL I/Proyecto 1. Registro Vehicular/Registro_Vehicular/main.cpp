@@ -10,6 +10,7 @@ using namespace std;
 
 void agregarProp();
 void agregarVehi();
+void eliminar(ifstream &Lec);
 
 void agregarPropB();
 void agregarVehiB();
@@ -33,9 +34,14 @@ char t_vehiculo[20];
 char f_vehiculo[20];
 char p_vehiculo[20];
 
+ofstream Esc;
+ifstream Lec;
+
 int main()
 {
     MYSQL* obj;
+    MYSQL_RES* res;
+    MYSQL_ROW row;
 
 	//PROGRAM OPTIONS
     boolean ProgramIsOpened=true;
@@ -197,6 +203,26 @@ int main()
 						break;
 					case 3:
 						//---
+						fflush(stdin);
+						int qstate = mysql_query(obj,"SELECT * FROM propietario");
+                        if(!qstate){
+                            res = mysql_store_result(obj);
+                            int count = mysql_num_fields(res);
+                            while(row=mysql_fetch_row(res)){
+                                for(int i = 0;i<count;i++){
+                                    //cout<<"\t"<<row[i]<<endl;
+                                    cout<<"--------------------------------"<<endl;
+                                    cout<<"Propietario: "<<row[i]<<"\n"<<"ID: "<<row[i++]<<"\n"<<"Nombre: "<<row[i++]<<"\n"<<"Apellido: "<<row[i++]<<"\n"<<"Cedula: "<<row[i++]<<"\n";
+                                    cout<<"--------------------------------"<<endl;
+                                    cout<<"\n"<<endl;
+                                }
+                                cout<<endl;
+
+                            }
+                        }else{
+                            cout<<"Failed to fetch ";
+                        }
+                        system("pause");
 						break;
 						//----
 				}
@@ -291,7 +317,36 @@ void agregarVehiB(){
 	
 }
 
+void eliminar(ifstream &Lec){
+    system("cls");
+    string nom,ape,ced,cedaux;
+    Lec.open("Personas.txt", ios::in);
+    ofstream aux("auxiliar.txt",ios::out);
+    if(Lec.is_open()){
+        cout<<"Cedula:"<<" ";
+        cin>>cedaux;
+        Lec>>nom;
+        while(!Lec.eof()){
+            Lec>>ape;
+            Lec>>ced;
+            if(ced == cedaux){
+                cout<<"Dato eliminado"<<endl;
+                Sleep(1500);
+            }else{
+                aux<<nom<<" "<<ape<<" "<<ced<<"\n";
+            }
+            Lec>>nom;
+        }
+        Lec.close();
+        aux.close();
+    }else{
+        cout<<"Error"<<endl;
+    }
+    remove("Personas.txt");
+    rename("auxiliar.txt","Personas.txt");
 
+
+}
 
 
 
