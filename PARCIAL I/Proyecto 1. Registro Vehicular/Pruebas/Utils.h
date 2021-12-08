@@ -19,7 +19,10 @@
 #include <stdio.h>
 #define INT_MAX 20
 
+using namespace std;
+
 namespace Utils
+
 
 {
     class Validation
@@ -135,6 +138,8 @@ namespace Utils
     class Generator
     {
         public:
+
+        static string generarEmail(string nombre, string apellido);
 
             /**
              * @brief generar aleatorio

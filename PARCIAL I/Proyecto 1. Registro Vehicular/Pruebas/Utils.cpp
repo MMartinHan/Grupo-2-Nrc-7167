@@ -1,14 +1,39 @@
 #include "Utils.h"
 #include <iostream>
 #include <sstream>
+#include <string>
+#include <string.h>
 
 #pragma warning(disable : 4996) ;
 using namespace Utils;
 
+string Utils::Generator::generarEmail(string nombre, string apellido) {
+
+
+	string nombre1, apellido1;
+	nombre1 = lower_case(nombre);
+	apellido1 = lower_case(apellido);
+
+	string email;
+	email += nombre1.substr(0, 1);
+	email += nombre1.substr(nombre1.find(" ", 0) + 1, 1);
+	//email += nombre2.substr(0, 1);
+	//email += nombre2.substr(nombre1.find(" ", 0) + 1, 1);
+
+	if (apellido1.find(" ", 0) < apellido1.length()) {
+		email += apellido1.substr(0, apellido1.find(" ", 0));
+	}
+	else {
+		email += apellido1;
+	}
+	return email;
+}
+
+
 bool Validation::validate_id(int id)
 {
     std::stringstream ss;
-    ss << id;
+    ss << to_string(id);
     std::string _id;
     ss >> _id;
 

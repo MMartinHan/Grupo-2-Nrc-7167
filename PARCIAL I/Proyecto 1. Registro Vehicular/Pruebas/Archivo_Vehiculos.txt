@@ -1,0 +1,42 @@
+
+id propietario: 1
+id vehiculo: 1
+Tipo: camioneta
+Fabricante: ford
+Placa: PSH4242
+
+id propietario: 1
+id vehiculo: 2
+Tipo: aveo
+Fabricante: chevrolet
+Placa: PDH5832
+
+id propietario: 2
+id vehiculo: 3
+Tipo: camion
+Fabricante: hino
+Placa: PQU8423
+
+id propietario: 1
+id vehiculo: 1
+Tipo: triciclo
+Fabricante: delmer
+Placa: FEO9242
+
+id propietario: 1
+id vehiculo: 2
+Tipo: aveo
+Fabricante: chevrolet
+Placa: OTD8343
+
+id propietario: 2
+id vehiculo: 3
+Tipo: camion
+Fabricante: Hino
+Placa: ODJ9841
+
+id propietario: 3
+id vehiculo: 4
+Tipo: subs
+Fabricante: nissan
+Placa: PWY6351

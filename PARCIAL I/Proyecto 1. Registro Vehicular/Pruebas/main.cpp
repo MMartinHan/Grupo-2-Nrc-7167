@@ -1,10 +1,15 @@
 #include <iostream>
 #include <winsock.h>
 #include <mysql.h>
-//#include <mysqld_error.h>
+#include <mysqld_error.h>
 #include <windows.h>
 #include <fstream>
+#include <string>
+#include <string.h>
 #include "Utils.h"
+#include "Utils.cpp"
+
+
 
 using namespace std;
 
@@ -23,6 +28,8 @@ int id_propietario;
 char nombre[20];
 char apellido[20];
 int cedula=0;
+char correo[70];
+string email;
 
 //TABLE VEHI
 int v_prop;
@@ -33,6 +40,8 @@ char p_vehiculo[20];
 
 int main()
 {
+    ifstream i;
+    ofstream o;
     MYSQL* obj;
     MYSQL_RES* res;
     MYSQL_ROW row;
@@ -57,7 +66,8 @@ int main()
         }
 		else{
 			int opcion, answer;
-            bool validar = true;
+			bool validar = true;
+
 			do{
 				cout<< "\t*MENU*"<<endl;
 				cout<< "1. Ingresar Propietario"<<endl;
@@ -69,33 +79,33 @@ int main()
 				cout<< "7. Mostrar Propietarios con sus vehiculos"<<endl;
 				cout<< "8. Mostrar Vehiculos de un propietario"<<endl;
 				cout<< "9. Salir"<<endl;
-
-                validar = true;
+				validar = true;
                 while(validar) {
                     cout<< "Elija su opcion: ";
                     cin>>opcion;
                     validar = Utils::Validation::validate_input_number(opcion);
                 }
-
-				string s;
+                string s;
 				switch(opcion){
 					case 1:
 					    fflush(stdin);
 						cout<<"Logged in. "<<endl<<endl;
             			while(ProgramIsOpened){
 
-                            while(validar) {
+                        validar = true;
+
+                        while(validar) {
 
                                 cout<<"id_propietario: ";
                                 cin>> id_propietario;
                                 validar = Utils::Validation::validate_input_number(id_propietario);
 
                             }
-                            cin.ignore(100,'\n');
+                        cin.ignore(100,'\n');
 
+                        validar = true;
 
-                            validar = true;
-                            while(validar) {
+                        while(validar) {
                                 cout<<"Nombre: ";
                                 cin.getline(nombre,20,'\n');
                                 s = Utils::Convertor::charToString(nombre);
@@ -104,7 +114,8 @@ int main()
                             }
 
                             validar = true;
-                            while(validar) {
+
+                        while(validar) {
 
                                 cout<<"Apellido: ";
                                 cin.getline(apellido,20,'\n');
@@ -114,7 +125,8 @@ int main()
                             }
 
                             validar = true;
-                            while(validar) {
+
+                        while(validar) {
 
                                 cout<<"Cedula: ";
                                 cin>> cedula;
@@ -127,57 +139,103 @@ int main()
 
                             cout<<endl;
 
-                            agregarProp();
-                            agregarPropB();
+                        string nomaux(nombre);
+                        string apeaux(apellido);
 
-                            sentence_aux="INSERT INTO propietario(id_propietario,nombre,apellido,cedula) VALUES('%d','%s','%s','%d')";
-                            sentence = new char[sentence_aux.length()+1];
-                            strcpy(sentence,sentence_aux.c_str());
+                        email = Utils::Generator::generarEmail(nomaux,apeaux);
 
-                            consult = new char[strlen(sentence)+sizeof(int)+strlen(nombre)+strlen(apellido)+sizeof(int)];
-                            sprintf(consult, sentence, id_propietario, nombre, apellido, cedula);
+                        int qstate = mysql_query(obj,"SELECT correo FROM propietario");
+                        if(!qstate){
+                            res = mysql_store_result(obj);
+                            int count = mysql_num_fields(res);
+                            int ultimoDigito=0;
+                            while(row=mysql_fetch_row(res)){
+                                for(int i = 0;i<count;i++){
+                                    /*if(email==row[i]){
+                                        int a = 0;
+                                        string sa=to_string(a);
+                                        email += a;
+                                    }*/
+                                    string emailTemp = row[i];
+                                    size_t posicionDominio = emailTemp.find("@", 0);
+                                    string email1 = emailTemp.substr(0, posicionDominio);
 
-                            if(mysql_ping(obj)){
-                                cout<<"ERROR: Imposible to connect. "<< endl;
-                                cout<< mysql_error(obj)<<endl;
+                                    if (email1.length() == email.length()) {
+
+                                        if (email1.find(email, 0) == 0) {
+                                            string digit = email1.substr(email1.length() - 1, 1);
+                                        if (Utils::Validation::is_digit(email1.substr(email1.length() - 1, 1))) {
+                                            ultimoDigito = stoi(email.substr(email.length() - 1, 1));
+                                            ultimoDigito = ultimoDigito + 1;
+                                            email = email.substr(0, email.length() - 1) + to_string(ultimoDigito);
+                                        }
+                                        else {
+                                            email += "1";
+                                            }
+                                        }
+                                    }
+
+                                }
+                                cout<<endl;
 
                             }
+                            email += "@espe.edu.ec";
+                        }else{
+                            cout<<"Failed to fetch ";
+                        }
 
-                            if(mysql_query(obj,consult)){
-                                cout<< "Error: "<< mysql_error(obj)<<endl;
-                                rewind(stdin);
-                                getchar();
 
-                            }else{
-                                cout<<"Info added correctly."<<endl;
+                        sentence_aux="INSERT INTO propietario(id_propietario,nombre,apellido,cedula,correo) VALUES('%d','%s','%s','%d','%s')";
+                        sentence = new char[sentence_aux.length()+1];
+                        strcpy(sentence,sentence_aux.c_str());
+                        strcpy(correo,email.c_str());
 
-                            }
-                            mysql_store_result(obj);
+                        consult = new char[strlen(sentence)+sizeof(int)+strlen(nombre)+strlen(apellido)+sizeof(int)+strlen(correo)];
+                        sprintf(consult, sentence, id_propietario, nombre, apellido, cedula, correo);
 
-                            validar = true;
+                        if(mysql_ping(obj)){
+                            cout<<"ERROR: Imposible to connect. "<< endl;
+                            cout<< mysql_error(obj)<<endl;
 
-                            cout<<endl<<"Another?"<<endl;
-                            cout<<"[1]: Yes"<<endl;
-                            cout<<"[0]: No"<<endl;
-                            while(validar) {
+                        }
+
+                        if(mysql_query(obj,consult)){
+                            cout<< "Error: "<< mysql_error(obj)<<endl;
+                            rewind(stdin);
+                            getchar();
+
+                        }else{
+                            cout<<"Info added correctly."<<endl;
+
+                        }
+                        mysql_store_result(obj);
+
+                        validar = true;
+
+                        void agregarProp();
+                        void agregarPropB();
+
+                        cout<<endl<<"Another?"<<endl;
+                        cout<<"[1]: Yes"<<endl;
+                        cout<<"[0]: No"<<endl;
+                         while(validar) {
 
                                 cout<<"Answer: ";
                                 cin>>answer;
                                 validar = Utils::Validation::validate_input_number(answer);
                                 cin.ignore(100,'\n');
                             }
-
-                            if(answer==0){
-                            ProgramIsOpened = false;
-                            }
-                            cout<<endl;
+                        if(answer==0){
+                        ProgramIsOpened = false;
+                        }
+                        cout<<endl;
 
                         }
                         validar = true;
                         system("pause");
                         break;
                     case 2:{
-
+                        validar = true;
                         while(validar) {
                             cout<<"Ingrese el ID del propietario que quiere eliminar \n";
                             cin>>id_propietario;
@@ -215,7 +273,7 @@ int main()
                                 for(int i = 0;i<count;i++){
                                     //cout<<"\t"<<row[i]<<endl;
                                     cout<<"--------------------------------"<<endl;
-                                    cout<<"Propietario: "<<row[i]<<"\n"<<"ID: "<<row[i++]<<"\n"<<"Nombre: "<<row[i++]<<"\n"<<"Apellido: "<<row[i++]<<"\n"<<"Cedula: "<<row[i++]<<"\n";
+                                    cout<<"Propietario: "<<row[i]<<"\n"<<"ID: "<<row[i++]<<"\n"<<"Nombre: "<<row[i++]<<"\n"<<"Apellido: "<<row[i++]<<"\n"<<"Cedula: "<<row[i++]<<"\n"<<"Correo: "<<row[i++]<<"\n";
                                     cout<<"--------------------------------"<<endl;
                                     cout<<"\n"<<endl;
                                 }
@@ -233,9 +291,8 @@ int main()
                     case 4:{
                         //fflush(stdin);
                         cout<<"Logged in. "<<endl<<endl;
-
-            			while(ProgramIsOpened){
-                            while(validar) {
+                        validar = true;
+            				while(validar) {
                                 cout<< "id vehiculo:";
                                 cin>>id_vehiculo;
                                 cin.ignore(100,'\n');
@@ -243,31 +300,27 @@ int main()
                             }
 
                             validar = true;
-                            while(validar) {
+            				while(validar) {
                                 cout<<"ID del propietario: ";
                                 cin>> v_prop;
                                 cin.ignore(100,'\n');
                                 validar = Utils::Validation::validate_input_number(id_propietario);
                             }
                             validar = true;
-                            while(validar) {
+                			while(validar) {
                                 cout<<"Tipo de vehiculo: ";
                                 cin.getline(t_vehiculo,20,'\n');
                                 validar = Utils::Validation::validate_string(t_vehiculo);
                             }
                             validar = true;
-                            while(validar) {
+                			while(validar) {
                                 cout<<"Fabricante del vehiculo: ";
                                 cin.getline(f_vehiculo,20,'\n');
                                 validar = Utils::Validation::validate_string(f_vehiculo);
                             }
                             validar = true;
-                            //while(validar) {
-                                cout<<"Placa del Vehiculo: ";
-                                cin.getline(p_vehiculo,20,'\n');
-                                //validar = Utils::Validation::validate_input_number();
-                            //}
-
+                			cout<<"Placa del Vehiculo: ";
+                			cin.getline(p_vehiculo,20,'\n');
 
                 			agregarVehi();
                 			agregarVehiB();
@@ -296,22 +349,19 @@ int main()
                 			cout<<endl<<"Another?"<<endl;
                 			cout<<"[1]: Yes"<<endl;
                 			cout<<"[0]: No"<<endl;
-                            validar = true;
+                			validar = true;
                             while(validar) {
                                 cout<<"Answer: ";
                                 cin>>answer;
                                 cin.ignore(100,'\n');
                                 validar = Utils::Validation::validate_input_number(answer);
                             }
-
                 			if(answer==0){
                     			ProgramIsOpened = false;
                 			}
 
                 			cout<<endl;
-
-							}
-							validar = true;
+                			validar = true;
 							system("cls");
                         break;
                     }
@@ -324,7 +374,6 @@ int main()
                                 cin>>cedeaux;
                                 validar = Utils::Validation::validate_id(cedeaux);
                         }
-
                         string sq = "SELECT * FROM propietario WHERE cedula = '"+to_string(cedeaux)+"' ";
                         const char* q =  sq.c_str();
                         int qstate = mysql_query(obj,q);
@@ -335,7 +384,7 @@ int main()
                                 for(int i = 0;i<count;i++){
                                     //cout<<"\t"<<row[i]<<endl;
                                     cout<<"--------------------------------"<<endl;
-                                    cout<<"Propietario: "<<row[i]<<"\n"<<"ID: "<<row[i++]<<"\n"<<"Nombre: "<<row[i++]<<"\n"<<"Apellido: "<<row[i++]<<"\n"<<"Cedula: "<<row[i++]<<"\n";
+                                    cout<<"Propietario: "<<row[i]<<"\n"<<"ID: "<<row[i++]<<"\n"<<"Nombre: "<<row[i++]<<"\n"<<"Apellido: "<<row[i++]<<"\n"<<"Cedula: "<<row[i++]<<"\n"<<"Correo: "<<row[i++]<<"\n";
                                     cout<<"--------------------------------"<<endl;
                                     cout<<"\n"<<endl;
                                 }
@@ -364,8 +413,6 @@ int main()
                             cin>>nombreaux;
                             validar = Utils::Validation::validate_string(nombreaux);
                         }
-
-
                         string sss = "SELECT * FROM propietario WHERE id_propietario = '"+to_string(id_propietario)+"' ";
                         //string query = sss.str();
                         const char* q =  sss.c_str();
@@ -382,7 +429,6 @@ int main()
                             cout<<"Record not found"<<endl;
                         }
                         //UPDATE `propietario` SET `cedula` = '1715021844' WHERE `propietario`.`id_propietario` = 2;
-
                         validar = true;
                         system("pause");
                         break;
@@ -400,29 +446,24 @@ int main()
                                 for(int i = 0;i<count;i++){
                                     //cout<<"\t"<<row[i]<<endl;
                                     cout<<"--------------------------------"<<endl;
-                                    cout<<"Propietario: "<<row[i]<<"\n"<<"ID: "<<row[i++]<<"\n"<<"Nombre: "<<row[i++]<<"\n"<<"Apellido: "<<row[i++]<<"\n"<<"Cedula: "<<row[i++]<<"\n"<<"ID vehiculo: "<<row[i++]<<"\n"<<"ID propietario: "<<row[i++]<<"\n"<<"Tipo: "<<row[i++]<<"\n"<<"Fabricante: "<<row[i++]<<"\n"<<"Placa: "<<row[i++]<<"\n";
+                                    cout<<"Propietario: "<<row[i]<<"\n"<<"ID: "<<row[i++]<<"\n"<<"Nombre: "<<row[i++]<<"\n"<<"Apellido: "<<row[i++]<<"\n"<<"Cedula: "<<row[i++]<<"\n"<<"Correo: "<<row[i++]<<"\n"<<"ID vehiculo: "<<row[i++]<<"\n"<<"ID propietario: "<<row[i++]<<"\n"<<"Tipo: "<<row[i++]<<"\n"<<"Fabricante: "<<row[i++]<<"\n"<<"Placa: "<<row[i++]<<"\n";
                                     cout<<"--------------------------------"<<endl;
 
                                 }
                                 cout<<endl;
-
                             }
                         }else{
                             cout<<"Failed to fetch ";
                         }
+
                         system("pause");
                         break;
                     }
 
                     case 8:{
 
-                        validar = true;
-                        while(validar) {
-                            cout<<"Ingrese el ID del propietario para ver sus vehiculos. "<<endl;
-                            cin>>id_propietario;
-                            validar = Utils::Validation::validate_input_number(id_propietario);
-                        }
-
+                        cout<<"Ingrese el ID del propietario para ver sus vehiculos. "<<endl;
+                        cin>>id_propietario;
                         string sq = "SELECT * FROM vehiculo WHERE id_propietario = '"+to_string(id_propietario)+"' ";
                         const char* q =  sq.c_str();
                         int qstate = mysql_query(obj,q);
@@ -443,7 +484,6 @@ int main()
                         }else{
                             cout<<"Failed to fetch ";
                         }
-
                         validar = true;
                         system("pause");
 
